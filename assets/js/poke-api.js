@@ -12,7 +12,20 @@ function convertPokeApiDetailToPokemon(pokeDetail) {
     pokemon.types = types
     pokemon.type = type
 
-    pokemon.photo = pokeDetail.sprites.other.dream_world.front_default
+    pokemon.photo = pokeDetail.sprites.other['official-artwork'].front_default;
+
+    const stats = pokeDetail.stats.map((statSlot) => statSlot.stat.name)
+    const [stat] = stats
+
+    pokemon.stats = stats
+    pokemon.stat = stat
+
+    const valores = pokeDetail.stats.map((statSlot) => statSlot.base_stat)
+    const [valor] = stats
+
+    pokemon.valores = valores
+    pokemon.valor = valor
+
 
     return pokemon
 }
@@ -23,7 +36,7 @@ pokeApi.getPokemonDetail = (pokemon) => {
         .then(convertPokeApiDetailToPokemon)
 }
 
-pokeApi.getPokemons = (offset = 0, limit = 5) => {
+pokeApi.getPokemons = (offset = 0, limit = 1080) => {
     const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`
 
     return fetch(url)

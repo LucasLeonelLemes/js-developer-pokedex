@@ -1,9 +1,16 @@
+.pokedex{
+    width: 20rem;
+    margin: auto;
+    display: block;
+}
+
 .pokemons {
-    display: grid;
-    grid-template-columns: 1fr;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     margin: 0;
     padding: 0;
     list-style: none;
+    display: grid;
 }
 
 .normal {
@@ -78,12 +85,18 @@
     background-color: #f9aec7;
 }
 
+
 .pokemon {
     display: flex;
     flex-direction: column;
     margin: .5rem;
     padding: 1rem;
     border-radius: 1rem;
+    cursor: pointer;
+}
+
+.pokemon :hover{
+    opacity: 50%;
 }
 
 .pokemon .number {
@@ -123,8 +136,10 @@
 }
 
 .pokemon .detail img {
-    max-width: 100%;
-    height: 70px;
+    max-width: 40%;
+    min-height: 40px;
+    max-height: 70px;
+    margin: 0.5rem;
 }
 
 .pagination {
@@ -144,6 +159,133 @@
     background-color: #6c79db;
     border: none;
     border-radius: 1rem;
+    cursor: pointer;
+}
+
+.pagination button:hover{
+    color: #6c79db;
+    background-color: #fff;
+}
+
+
+
+.btn-outline-success {
+    color: #000;
+    background-color: #fff;
+    border-radius: 1rem;
+    cursor: pointer;
+    font-size: 15px;
+    transition: all .3s ease;
+}
+
+.btn-outline-success:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.modal {
+    background-color: rgba(0, 0, 0, 0.226);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    z-index: 2;
+}
+
+.conteudo-modal .types-modal .grass {
+    background-color: #77c850;
+}
+
+.conteudo-modal {
+    margin: 1rem auto;
+    margin-top: 3%;
+    max-width: 400px;
+    background-color: #fff;
+    border-radius: 8px;
+    position: relative;
+    padding: 0.5rem;
+}
+
+.cabecalho-modal {
+    padding: 1px 8px;
+    justify-content: space-between;
+    border-bottom: solid #eee 1px;
+}
+
+
+.modal-fechar {
+    font-size: 1rem;
+    text-align: left;
+    padding: 20px 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+}
+
+.corpo-modal .titulo-modal {
+    font-weight: bold;
+    color: #fff;
+    text-transform: capitalize;
+    margin: 10px 0;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.corpo-modal {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+}
+
+.types-modal {
+    display: contents;
+}
+
+.types-modal .type {
+    color: #fff;
+    padding: .25rem .5rem;
+    margin: .25rem 0;
+    font-size: .625rem;
+    border-radius: 1rem;
+    filter: brightness(1.1);
+    text-align: center;
+}
+
+.corpo-modal .imagem-modal {
+    max-width: 100%;
+    height: 250px;
+    margin: 1rem;
+
+}
+
+.corpo-modal .detalhes-modal {
+    padding: 1px 8px 8px 8px;
+    width: 100%;
+    text-align: center;
+}
+.types-modal{
+ size-adjust: 5rem
+ ;
+}
+.corpo-modal .stats-modal{
+    display: flex;
+    justify-content: space-between;
+    text-transform: capitalize;
+    padding: 0.5rem;
+    margin: 5px;
+    border-radius: 1rem;
+    background-color: #fff6f6e3;
+}
+
+.nameStats{
+    text-align: left;
+}
+
+.valueStats{
+    text-align: right;
 }
 
 @media screen and (min-width: 380px) {
